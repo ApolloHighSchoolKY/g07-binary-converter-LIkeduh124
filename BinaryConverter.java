@@ -35,20 +35,53 @@ public class BinaryConverter
     	value=newValue;
     }
 
+    public String getBinary()
+    {
+        return binaryValue;
+    }
+
+    public void setBinary(String newBinary)
+    {
+        binaryValue = newBinary;
+    }
+
     public String toBinary()
     {
+
+        int count = 8;
+        int valval = value;
+        String end = "";
     	//Convert the integer value to binary
+        while(count > 0)
+        {
+            end = (valval%2) + end;
+            valval/=2;
+            count--;
+        }
+        
 
 
-    	return "";
+    	return "" + end;
     }
 
     public int toDecimal()
     {
-    	//Convert the binary value to decimal
 
-    	return 0;
+        int x = value;
+    	//Convert the binary value to decimal
+        for(int pos = 0; pos<binaryValue.length(); pos++)
+        {
+            if(binaryValue.charAt(pos) == '1')
+            {
+                x += (Math.pow(2, binaryValue.length()-pos-1));
+            }
+        }
+    	return x;
     }
 
+    public String toString()
+    {
+        return "" + value;
+    }
 
 }
