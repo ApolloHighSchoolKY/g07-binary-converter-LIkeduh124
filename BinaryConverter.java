@@ -59,9 +59,7 @@ public class BinaryConverter
             count--;
         }
         
-
-
-    	return "" + end;
+    	return end;
     }
 
     public int toDecimal()
